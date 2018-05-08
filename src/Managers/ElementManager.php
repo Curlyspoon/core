@@ -2,9 +2,9 @@
 
 namespace Curlyspoon\Core\Managers;
 
-use InvalidArgumentException;
 use Curlyspoon\Core\Contracts\Element as ElementContract;
 use Curlyspoon\Core\Contracts\ElementManager as ElementManagerContract;
+use InvalidArgumentException;
 
 class ElementManager implements ElementManagerContract
 {
@@ -12,7 +12,7 @@ class ElementManager implements ElementManagerContract
 
     public function register(string $name, string $element): ElementManagerContract
     {
-        if (! isset(class_implements($element)[ElementContract::class])) {
+        if (!isset(class_implements($element)[ElementContract::class])) {
             throw new InvalidArgumentException(sprintf('The given classname [%s] for [%s] is not a [%s].', $element, $name, ElementContract::class));
         }
 
@@ -28,7 +28,7 @@ class ElementManager implements ElementManagerContract
 
     public function createElement(string $name, array $options = []): ElementContract
     {
-        if (! isset($this->elements[$name])) {
+        if (!isset($this->elements[$name])) {
             throw new InvalidArgumentException(sprintf('No element with name [%s] found.', $name));
         }
 
