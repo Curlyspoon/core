@@ -1,6 +1,6 @@
 <?php
 
-namespace Curlyspoon\Framework\Libs;
+namespace Curlyspoon\Core\Libs;
 
 use Curlyspoon\Core\Contracts\Element as ElementContract;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -64,7 +64,7 @@ abstract class Element implements ElementContract
 
     public function __toString(): string
     {
-        return $this->render();
+        return $this->toString();
     }
 
     protected function optionsResolver(): OptionsResolver
