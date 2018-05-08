@@ -2,8 +2,8 @@
 
 namespace Curlyspoon\Framework\Libs;
 
-use Symfony\Component\OptionsResolver\OptionsResolver;
 use Curlyspoon\Core\Contracts\Element as ElementContract;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 abstract class Element implements ElementContract
 {
@@ -82,7 +82,7 @@ abstract class Element implements ElementContract
             $resolver->setAllowedValues($option, $values);
         }
 
-        if(method_exists($this, 'configureOptions')) {
+        if (method_exists($this, 'configureOptions')) {
             $this->configureOptions($resolver);
         }
 
