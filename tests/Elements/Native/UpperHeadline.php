@@ -1,6 +1,6 @@
 <?php
 
-namespace Curlyspoon\Core\Tests\Elements;
+namespace Curlyspoon\Core\Tests\Elements\Native;
 
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;

@@ -15,7 +15,11 @@
         "symfony/options-resolver": "^4.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "~7.0.0"
+        "phpunit/phpunit": "~7.0.0",
+        "pug-php/pug": "^3.1"
+    },
+    "suggest": {
+        "pug-php/pug": "Allows to use the pug template engine."
     },
     "autoload": {
         "psr-4": {
@@ -27,7 +31,7 @@
             "tests/integration/TestCase.php"
         ],
         "psr-4": {
-            "Curlyspoon\\Core\\Tests\\Elements\\": "tests/elements"
+            "Curlyspoon\\Core\\Tests\\Elements\\": "tests/Elements"
         }
     },
     "config": {

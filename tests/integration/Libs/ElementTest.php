@@ -1,7 +1,7 @@
 <?php
 
-use Curlyspoon\Core\Tests\Elements\Headline;
-use Curlyspoon\Core\Tests\Elements\UpperHeadline;
+use Curlyspoon\Core\Tests\Elements\Native\Headline;
+use Curlyspoon\Core\Tests\Elements\Native\UpperHeadline;
 use Symfony\Component\OptionsResolver\Exception\InvalidOptionsException;
 use Symfony\Component\OptionsResolver\Exception\MissingOptionsException;
 

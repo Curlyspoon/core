@@ -1,0 +1,20 @@
+<?php
+
+namespace Curlyspoon\Core\Elements;
+
+use Pug\Pug;
+
+abstract class PugElement extends Element
+{
+    public function render(): string
+    {
+        return $this->getEngine()->renderFile($this->getPath(), $this->getOptions());
+    }
+
+    abstract protected function getPath(): string;
+
+    protected function getEngine(): Pug
+    {
+        return new Pug();
+    }
+}

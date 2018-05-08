@@ -1,10 +1,10 @@
 <?php
 
-namespace Curlyspoon\Core\Tests\Elements;
+namespace Curlyspoon\Core\Tests\Elements\Pug;
 
-use Curlyspoon\Core\Elements\Element;
+use Curlyspoon\Core\Elements\PugElement;
 
-class Headline extends Element
+class Headline extends PugElement
 {
     protected $name = 'headline';
 
@@ -25,8 +25,8 @@ class Headline extends Element
         'size' => [1, 2, 3, 4, 5, 6],
     ];
 
-    public function render(): string
+    protected function getPath(): string
     {
-        return sprintf('<h%d>%s</h%d>', $this->options['size'], $this->options['text'], $this->options['size']);
+        return realpath(sprintf(__DIR__.'/../../templates/pug/%s.pug', $this->name));
     }
 }
