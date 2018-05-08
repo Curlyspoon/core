@@ -9,7 +9,7 @@ filter:
 
 build:
   environment:
-    php: 7.1.0
+    php: ^7.1.3
   dependencies:
     after:
       - composer dump-autoload -o
