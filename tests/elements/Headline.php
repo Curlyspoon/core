@@ -2,7 +2,7 @@
 
 namespace Curlyspoon\Core\Tests\Elements;
 
-use Curlyspoon\Core\Elements\Element;
+use Curlyspoon\Core\Libs\Element;
 
 class Headline extends Element
 {

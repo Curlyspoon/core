@@ -1,6 +1,6 @@
 <?php
 
-namespace Curlyspoon\Core\Elements;
+namespace Curlyspoon\Core\Libs;
 
 use Curlyspoon\Core\Contracts\Element as ElementContract;
 use Symfony\Component\OptionsResolver\OptionsResolver;
