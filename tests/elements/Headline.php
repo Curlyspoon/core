@@ -22,7 +22,7 @@ class Headline extends Element
     ];
 
     protected $values = [
-        'size' => [1,2,3,4,5,6],
+        'size' => [1, 2, 3, 4, 5, 6],
     ];
 
     public function render(): string

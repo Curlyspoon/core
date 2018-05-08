@@ -2,8 +2,8 @@
 
 use Curlyspoon\Core\Tests\Elements\Headline;
 use Curlyspoon\Core\Tests\Elements\UpperHeadline;
-use Symfony\Component\OptionsResolver\Exception\MissingOptionsException;
 use Symfony\Component\OptionsResolver\Exception\InvalidOptionsException;
+use Symfony\Component\OptionsResolver\Exception\MissingOptionsException;
 
 class ElementTest extends TestCase
 {

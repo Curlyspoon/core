@@ -11,7 +11,7 @@ class UpperHeadline extends Headline
 
     protected function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setNormalizer('text', function(Options $options, string $value) {
+        $resolver->setNormalizer('text', function (Options $options, string $value) {
             return mb_strtoupper($value);
         });
     }
