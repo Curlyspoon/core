@@ -11,6 +11,6 @@ class TwigElementTest extends TestCase
             'text' => 'my headline',
         ]);
 
-        $this->assertEquals("<h1>my headline</h1>", $headline->render());
+        $this->assertEquals('<h1>my headline</h1>', $headline->render());
     }
 }

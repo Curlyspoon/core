@@ -2,8 +2,8 @@
 
 namespace Curlyspoon\Core\Elements;
 
-use Twig_Loader_Filesystem;
 use Twig_Environment;
+use Twig_Loader_Filesystem;
 
 abstract class TwigElement extends Element
 {
@@ -17,6 +17,7 @@ abstract class TwigElement extends Element
     protected function getEngine(): Twig_Environment
     {
         $loader = new Twig_Loader_Filesystem($this->getPath());
+
         return new Twig_Environment($loader);
     }
 }
