@@ -1,7 +1,7 @@
 <?php
 
-use Curlyspoon\Core\Exceptions\Exception;
 use Curlyspoon\Core\Exceptions\ElementNotFoundException;
+use Curlyspoon\Core\Exceptions\Exception;
 
 class ElementManagerTest extends TestCase
 {
@@ -24,7 +24,6 @@ class ElementManagerTest extends TestCase
     /** @test */
     public function able_to_render_element()
     {
-
         $this->assertEquals('<h1>my headline</h1>', $this->getElementManager()->render('headline', [
             'text' => 'my headline',
         ]));
