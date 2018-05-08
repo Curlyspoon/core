@@ -27,6 +27,6 @@ class Headline extends PugElement
 
     protected function getPath(): string
     {
-        return realpath(sprintf(__DIR__.'/../../templates/pug/%s.pug', $this->name));
+        return realpath(__DIR__.'/../../templates/pug/');
     }
 }

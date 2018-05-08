@@ -8,7 +8,7 @@ abstract class PugElement extends Element
 {
     public function render(): string
     {
-        return $this->getEngine()->renderFile($this->getPath(), $this->getOptions());
+        return $this->getEngine()->renderFile($this->getPath().'/'.$this->name.'.pug', $this->getOptions());
     }
 
     abstract protected function getPath(): string;
