@@ -22,6 +22,14 @@
             "Curlyspoon\\Core\\": "src"
         }
     },
+    "autoload-dev": {
+        "classmap": [
+            "tests/integration/TestCase.php"
+        ],
+        "psr-4": {
+            "Curlyspoon\\Core\\Tests\\Elements\\": "tests/elements"
+        }
+    },
     "config": {
         "preferred-install": "dist",
         "sort-packages": true,
