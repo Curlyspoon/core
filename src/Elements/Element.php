@@ -47,6 +47,11 @@ abstract class Element implements ElementContract
 
     public function __construct(array $options = [])
     {
+        $this->resolve($options);
+    }
+
+    public function resolve(array $options)
+    {
         $this->options = $this->optionsResolver()->resolve($options);
     }
 
