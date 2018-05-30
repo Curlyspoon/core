@@ -2,8 +2,8 @@
 
 namespace Curlyspoon\Core\Elements;
 
-use Illuminate\View\Factory;
 use Illuminate\Container\Container;
+use Illuminate\View\Factory;
 
 abstract class BladeElement extends Element
 {
@@ -11,7 +11,7 @@ abstract class BladeElement extends Element
     {
         return $this->getEngine()->make(implode('.', array_filter([
             $this->getPath(),
-            $this->name
+            $this->name,
         ])), $this->getOptions())->render();
     }
 
