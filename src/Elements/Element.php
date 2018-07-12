@@ -2,8 +2,8 @@
 
 namespace Curlyspoon\Core\Elements;
 
-use Exception;
 use Curlyspoon\Core\Contracts\Element as ElementContract;
+use Exception;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 abstract class Element implements ElementContract
@@ -84,8 +84,9 @@ abstract class Element implements ElementContract
     {
         try {
             $this->optionsResolver()->resolve($this->getOptions());
+
             return true;
-        } catch(Exception $exception) {
+        } catch (Exception $exception) {
             return false;
         }
     }
@@ -104,7 +105,7 @@ abstract class Element implements ElementContract
 
     protected function optionsResolver(): OptionsResolver
     {
-        if(is_null($this->resolver)) {
+        if (is_null($this->resolver)) {
             $this->resolver = new OptionsResolver();
             $this->resolver->setDefaults($this->defaults);
 
