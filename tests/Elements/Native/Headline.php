@@ -27,6 +27,8 @@ class Headline extends Element
 
     public function render(): string
     {
+        $this->resolve();
+
         return sprintf('<h%d>%s</h%d>', $this->options['size'], $this->options['text'], $this->options['size']);
     }
 }

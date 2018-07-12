@@ -13,7 +13,7 @@ class ElementTest extends TestCase
         $this->expectException(MissingOptionsException::class);
         $this->expectExceptionMessage('The required option "text" is missing.');
 
-        new Headline();
+        Headline::make()->resolve();
     }
 
     /** @test */
@@ -32,12 +32,12 @@ class ElementTest extends TestCase
         $this->expectException(InvalidOptionsException::class);
         $this->expectExceptionMessage('The option "text" with value array is expected to be of type "string", but is of type "array".');
 
-        new Headline([
+        Headline::make([
             'text' => [
                 'my',
                 'headline',
             ],
-        ]);
+        ])->resolve();
     }
 
     /** @test */
@@ -47,7 +47,7 @@ class ElementTest extends TestCase
             'text' => 'my headline',
         ]);
 
-        $this->assertEquals(1, $headline->getOptions()['size']);
+        $this->assertEquals(1, $headline->resolve()->getOptions()['size']);
     }
 
     /** @test */
@@ -56,10 +56,10 @@ class ElementTest extends TestCase
         $this->expectException(InvalidOptionsException::class);
         $this->expectExceptionMessage('The option "size" with value 0 is invalid. Accepted values are: 1, 2, 3, 4, 5, 6.');
 
-        new Headline([
+        Headline::make([
             'text' => 'my headline',
             'size' => 0,
-        ]);
+        ])->resolve();
     }
 
     /** @test */

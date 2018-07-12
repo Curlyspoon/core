@@ -9,6 +9,8 @@ abstract class TwigElement extends Element
 {
     public function render(): string
     {
+        $this->resolve();
+
         return $this->getEngine()->render($this->name.'.twig', $this->getOptions());
     }
 
