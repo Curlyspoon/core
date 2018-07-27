@@ -85,9 +85,9 @@ abstract class Element implements ElementContract
         $resolver = OptionsResolver::make([
             'defaults' => $this->defaults,
             'required' => $this->required,
-            'types' => $this->types,
-            'values' => $this->values,
-            'nested' => $this->nested,
+            'types'    => $this->types,
+            'values'   => $this->values,
+            'nested'   => $this->nested,
         ]);
 
         if (method_exists($this, 'configureOptions')) {
