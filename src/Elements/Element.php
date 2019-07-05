@@ -3,7 +3,8 @@
 namespace Curlyspoon\Core\Elements;
 
 use Curlyspoon\Core\Contracts\Element as ElementContract;
-use Symfony\Component\OptionsResolver\OptionsResolver;
+use Curlyspoon\NestedOptionsResolver\OptionsResolver;
+use Symfony\Component\OptionsResolver\OptionsResolver as SymfonyOptionsResolver;
 
 abstract class Element implements ElementContract
 {
@@ -74,6 +75,13 @@ abstract class Element implements ElementContract
 
     /**
      * @var array
+     *
+     * @see OptionsResolver::setNested()
+     */
+    protected $nested = [];
+
+    /**
+     * @var array
      */
     protected $options = [];
 
@@ -104,20 +112,15 @@ abstract class Element implements ElementContract
         return $this->toString();
     }
 
-    protected function optionsResolver(): OptionsResolver
+    protected function optionsResolver(): SymfonyOptionsResolver
     {
-        $resolver = new OptionsResolver();
-        $resolver->setDefaults($this->defaults);
-
-        $resolver->setRequired($this->required);
-
-        foreach ($this->types as $option => $types) {
-            $resolver->setAllowedTypes($option, $types);
-        }
-
-        foreach ($this->values as $option => $values) {
-            $resolver->setAllowedValues($option, $values);
-        }
+        $resolver = OptionsResolver::make([
+            'defaults' => $this->defaults,
+            'required' => $this->required,
+            'types'    => $this->types,
+            'values'   => $this->values,
+            'nested'   => $this->nested,
+        ]);
 
         if (method_exists($this, 'configureOptions')) {
             $this->configureOptions($resolver);
