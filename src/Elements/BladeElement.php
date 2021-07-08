@@ -9,6 +9,8 @@ abstract class BladeElement extends Element
 {
     public function render(): string
     {
+        $this->resolve();
+
         return $this->getEngine()->make(implode('.', array_filter([
             $this->getPath(),
             $this->name,
